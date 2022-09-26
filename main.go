@@ -1,8 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"time"
+	"log"
+	"fmt"
+	"net/http"
 )
 
 type Config struct {
@@ -10,17 +12,23 @@ type Config struct {
 }
 
 type Post struct {
-	Id int32
+	Id          int32
 	DateCreated time.Time
-	Content string
+	Content     string
 }
 
 type Tag struct {
-	Id int32
-	Name string
+	Id    int32
+	Name  string
 	Color string
 }
 
+func handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "You just hit /. Great!")
+}
+
 func main() {
-	fmt.Printf("You just ran main.go. Good for you!")
+	fmt.Println("Server started. Congratulations!")
+	http.HandleFunc("/", handler)
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
