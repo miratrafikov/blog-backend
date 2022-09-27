@@ -25,13 +25,13 @@ type Tag struct {
 	Color string `json:"color"`
 }
 
-func rootHandler(w http.ResponseWriter, r *http.Request) {
+func blogsHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "You just hit /blog. Great!")
 }
 
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/blog", rootHandler).Methods("GET")
+	router.HandleFunc("/blogs", blogsHandler).Methods("GET")
 	http.Handle("/", router)
 	fmt.Println("Server starting...")
 	log.Fatal(http.ListenAndServe(":8080", router))
