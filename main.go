@@ -14,15 +14,15 @@ type Config struct {
 }
 
 type Post struct {
-	Id          int32
-	DateCreated time.Time
-	Content     string
+	Id          int32     `json:"id"`
+	DateCreated time.Time `json:"dateCreated"`
+	Content     string    `json:"content"`
 }
 
 type Tag struct {
-	Id    int32
-	Name  string
-	Color string
+	Id    int32  `json:"id"`
+	Name  string `json:"name"`
+	Color string `json:"color"`
 }
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
