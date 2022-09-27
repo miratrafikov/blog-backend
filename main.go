@@ -17,6 +17,7 @@ type Config struct {
 type Post struct {
 	Id          int32     `json:"id"`
 	DateCreated time.Time `json:"dateCreated"`
+	Title       string    `json:"title"`
 	Content     string    `json:"content"`
 }
 
@@ -28,9 +29,10 @@ type Tag struct {
 
 var posts = []Post{
 	{
-		Id: 1,
+		Id:          1,
 		DateCreated: time.Now(),
-		Content: "Let's goo!",
+		Title:       "The Simplest Entry",
+		Content:     "One paragraph. Nothing more.",
 	},
 }
 
