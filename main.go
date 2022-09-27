@@ -1,10 +1,12 @@
 package main
 
 import (
-	"time"
-	"log"
 	"fmt"
+	"log"
 	"net/http"
+	"time"
+
+	"github.com/gorilla/mux"
 )
 
 type Config struct {
@@ -23,12 +25,14 @@ type Tag struct {
 	Color string
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "You just hit /. Great!")
+func rootHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "You just hit /blog. Great!")
 }
 
 func main() {
-	fmt.Println("Server started. Congratulations!")
-	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	router := mux.NewRouter()
+	router.HandleFunc("/blog", rootHandler).Methods("GET")
+	http.Handle("/", router)
+	fmt.Println("Server starting...")
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
