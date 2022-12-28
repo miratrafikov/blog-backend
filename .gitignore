@@ -1,3 +1,6 @@
+# Ignore env.yaml (duplicate env.example.yaml and fill in the values manually for opsec purposes)
+env.yaml
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
