@@ -17,7 +17,7 @@ type Config struct {
 	}
 }
 
-func ReadConfigFromDotEnv(directoryPath string) Config {
+func ReadConfigFromEnvFile(directoryPath string) Config {
 	viper.AddConfigPath(directoryPath)
 	viper.SetConfigName("env")
 	viper.SetConfigType("yaml")
