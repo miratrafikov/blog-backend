@@ -11,9 +11,7 @@ type Config struct {
 		Port string `mapstructure:"port"`
 	}
 	Db struct {
-		username     string `mapstructure:"username"`
-		password     string `mapstructure:"username"`
-		databaseName string `mapstructure:"databaseName"`
+		DatabaseName string `mapstructure:"databaseName"`
 	}
 }
 

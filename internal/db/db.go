@@ -8,12 +8,14 @@ import (
 	_ "github.com/lib/pq"
 )
 
-func GetConnection(dbName string) *sql.DB {
-	connectionString := fmt.Sprintf("postgresql://postgres:postgres@localhost/%s?sslmode=disable", dbName)
+var Connection *sql.DB
+
+func EstablishConnection(databaseName string) {
+	connectionString := fmt.Sprintf("postgresql://postgres:postgres@localhost/%s?sslmode=disable", databaseName)
 	connection, err := sql.Open("postgres", connectionString)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	return connection
+	Connection = connection
 }
