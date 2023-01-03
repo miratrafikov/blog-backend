@@ -1,5 +1,5 @@
 CREATE TABLE post (
     id SERIAL PRIMARY KEY,
-    date_created TIMESTAMP,
-    content TEXT
+    content TEXT NOT NULL,
+    created_at TIMESTAMP NOT NULL
 );

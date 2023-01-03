@@ -1,5 +1,5 @@
 CREATE TABLE tag (
     id SERIAL PRIMARY KEY,
-    name TEXT UNIQUE,
-    color VARCHAR(6)
+    name TEXT UNIQUE NOT NULL,
+    color VARCHAR(6) NOT NULL
 );
