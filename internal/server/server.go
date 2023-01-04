@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/miratrafikov/blog_backend/internal/controller"
+	"github.com/miratrafikov/blog-backend/internal/controller"
 )
 
 type StartServerInput struct {

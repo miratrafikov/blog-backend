@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/miratrafikov/blog_backend/internal/config"
-	"github.com/miratrafikov/blog_backend/internal/db"
-	"github.com/miratrafikov/blog_backend/internal/server"
+	"github.com/miratrafikov/blog-backend/internal/config"
+	"github.com/miratrafikov/blog-backend/internal/db"
+	"github.com/miratrafikov/blog-backend/internal/server"
 )
 
 func main() {

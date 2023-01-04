@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/miratrafikov/blog_backend/internal/usecase"
+	"github.com/miratrafikov/blog-backend/internal/usecase"
 )
 
 func RoutePosts(w http.ResponseWriter, r *http.Request) {

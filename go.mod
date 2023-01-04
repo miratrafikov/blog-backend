@@ -1,4 +1,4 @@
-module github.com/miratrafikov/blog_backend
+module github.com/miratrafikov/blog-backend
 
 go 1.19
 

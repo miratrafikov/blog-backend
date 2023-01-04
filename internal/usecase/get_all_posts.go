@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"github.com/miratrafikov/blog_backend/internal/db"
-	"github.com/miratrafikov/blog_backend/internal/entity"
+	"github.com/miratrafikov/blog-backend/internal/db"
+	"github.com/miratrafikov/blog-backend/internal/entity"
 )
 
 func GetAllPosts() ([]entity.Post, error) {
