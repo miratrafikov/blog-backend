@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 	"os"
 
 	"github.com/miratrafikov/blog_backend/internal/config"
@@ -25,23 +24,19 @@ func getEnvFileDirectoryFromArgs() string {
 		os.Exit(0)
 	}
 
-	if flagFile == "" {
-		log.Fatal("env.yaml file directory must be provided\nHelp: -h")
-	}
-
 	return flagFile
 }
 
 func readFlags() (bool, string) {
 	flagHelp := flag.Bool("h", false, "show help")
-	flagEnvFile := flag.String("f", "", "directory containing env.yaml")
+	flagEnvFile := flag.String("f", ".", "directory containing env.yaml")
 	flag.Parse()
 
 	return *flagHelp, *flagEnvFile
 }
 
 func startServer(config config.Config) {
-	fmt.Printf("Starting server http://localhost:%s/\n", config.Server.Port)
+	fmt.Printf("Starting server at http://localhost:%s/...\n", config.Server.Port)
 	server.StartApplication(server.StartServerInput{
 		ServerPort:   config.Server.Port,
 		DatabaseName: config.Db.DatabaseName,

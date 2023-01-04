@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/miratrafikov/blog_backend/internal/usecase"
+	"github.com/miratrafikov/blog_backend/internal/controller"
 )
 
 type StartServerInput struct {
@@ -14,9 +14,13 @@ type StartServerInput struct {
 }
 
 func StartApplication(input StartServerInput) {
+	assignControllers()
 	serverAddress := fmt.Sprintf("localhost:%s", input.ServerPort)
-	http.HandleFunc("/posts", usecase.GetAllPosts)
 	if err := http.ListenAndServe(serverAddress, nil); err != nil {
 		log.Fatal(err)
 	}
+}
+
+func assignControllers() {
+	http.HandleFunc("/posts", controller.RoutePosts)
 }
